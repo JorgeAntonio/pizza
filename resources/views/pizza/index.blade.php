@@ -31,9 +31,9 @@
                         <div class="form-inline">
                             <div class="form-group">
                                 <label for="price">Pizza price</label>
-                                <input type="number" name="small pizza price" id="price" class="form-control" placeholder="small pizza price">
-                                <input type="number" name="medium pizza price" id="price" class="form-control" placeholder="medium pizza price">
-                                <input type="number" name="large pizza price" id="price" class="form-control" placeholder="large pizza price">
+                                <input type="number" name="small_pizza_price" id="price" class="form-control" placeholder="small pizza price">
+                                <input type="number" name="medium_pizza_price" id="price" class="form-control" placeholder="medium pizza price">
+                                <input type="number" name="large_pizza_price" id="price" class="form-control" placeholder="large pizza price">
                             </div>
                         </div>
                         <div class="form-group">
