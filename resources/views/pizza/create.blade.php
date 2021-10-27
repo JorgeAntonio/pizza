@@ -9,24 +9,29 @@
                     <div class="card-body">
                         <ul class="list-group">
                             <li class="list-group">
-                                <a href="" class="list-group-item list-group-item-action">View</a>
-                                <a href="" class="list-group-item list-group-item-action">Create</a>
+                                <a href="{{route('pizza.index')}}" class="list-group-item list-group-item-action">View All</a>
+                                <a href="{{route('pizza.create')}}" class="list-group-item list-group-item-action">Create New</a>
                             </li>
                         </ul>
                     </div>
                 </div>
+
+                @if(count($errors)>0)
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <div class="alert alert-danger" role="alert">
+                            @foreach($errors->all() as $error)
+                                <p>{{ $error }}</p>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                @endif
             </div>
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Pizza</div>
-                    @if(count($errors)>0)
-                            <div class="alert alert-danger" role="alert">
-                                @foreach($errors->all() as $error)
-                                    <p>{{ $error }}</p>
-                                @endforeach
-                            </div>
-                    @endif
-                    <form action="{{route('pizza.store')}}" method="post">
+                    <form action="{{route('pizza.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                     <div class="card-body">
                         <div class="form-group">
