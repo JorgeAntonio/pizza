@@ -9,8 +9,8 @@
                     <div class="card-body">
                         <ul class="list-group">
                             <li class="list-group">
-                                <a href="{{route('pizza.index')}}" class="list-group-item list-group-item-action">View All</a>
-                                <a href="{{route('pizza.create')}}" class="list-group-item list-group-item-action">Create New</a>
+                                <a href="{{route('pizza.index')}}" class="list-group-item list-group-item-action">View</a>
+                                <a href="{{route('pizza.create')}}" class="list-group-item list-group-item-action">Create</a>
                             </li>
                         </ul>
                     </div>
@@ -28,6 +28,7 @@
                 </div>
                 @endif
             </div>
+
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Pizza</div>
