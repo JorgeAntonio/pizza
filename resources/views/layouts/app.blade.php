@@ -58,6 +58,22 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    @if(auth()->user()->is_admin == 0)
+                                        <a href="{{ route('home') }}" class="dropdown-item">
+                                            {{ __('Your order history') }}
+                                        </a>
+                                    @endif
+
+                                    @if(auth()->user()->is_admin == 1)
+                                        <a href="{{ route('user.order') }}" class="dropdown-item">
+                                            {{ __('User order') }}
+                                        </a>
+                                        <a href="{{ route('customers') }}" class="dropdown-item">
+                                            {{ __('All customers') }}
+                                        </a>
+                                    @endif
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

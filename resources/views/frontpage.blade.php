@@ -6,24 +6,21 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">Menu</div>
-
                     <div class="card-body">
                         <div class="list-group">
                             <form action="{{ route('frontpage') }}" method="get">
-                                <a href="/" class="btn btn-outline-dark btn-sm mb-2">x</a>
+                                <a href="/" class="list-group-item list-group-item-action">Delete filter</a>
                                 <input type="submit" value="Vegetarian" name="category" class="list-group-item list-group-item-action">
                                 <input type="submit" value="Nonvegetarian" name="category" class="list-group-item list-group-item-action">
                                 <input type="submit" value="Traditional" name="category" class="list-group-item list-group-item-action">
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Pizza</div>
-
+                    <div class="card-header">Pizza ({{ count($pizzas) }} pizzas)</div>
                     <div class="card-body">
                         <div class="row">
                             @forelse( $pizzas as $pizza )
@@ -48,7 +45,7 @@
 
     <style>
         a.list-group-item{
-            font-size: 18px;
+            font-size: 16px;
         }
         a.list-group-item:hover{
             background-color: red;
@@ -58,6 +55,13 @@
             background-color: red;
             color: #fff;
             font-size: 20px;
+        }
+        input.list-group-item{
+            font-size: 16px;
+        }
+        input.list-group-item:hover{
+            background-color: red;
+            color: #fff;
         }
     </style>
 @endsection

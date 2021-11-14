@@ -22,9 +22,6 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">All Pizzas
-                        <a href="{{route('pizza.create')}}">
-                            <button type="button" class="btn btn-success" style="float: right">Add pizza</button>
-                        </a>
                     </div>
                     <div class="card-body">
                         @if (session('message'))
