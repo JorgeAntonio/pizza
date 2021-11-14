@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,10 +24,14 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Application|Factory|View|RedirectResponse
      */
     public function index()
     {
-        return view('home');
+        if (auth()->user()->is_admin == 1){
+            return redirect()->route('user.order');
+        }
+        $orders = Order::latest()->where('user_id',auth()->user()->id)->get();
+        return view('home',compact('orders'));
     }
 }

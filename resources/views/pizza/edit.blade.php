@@ -46,7 +46,7 @@
                                 <label for="category">Category</label>
                                 <select name="category" id="category" class="form-control">
                                     <option value=""></option>
-                                    <option value="vegetanarian">Vegetanarian Pizza</option>
+                                    <option value="vegetarian">Vegetarian Pizza</option>
                                     <option value="nonvegetarian">Non Vegetarian Pizza</option>
                                     <option value="traditional">Traditional Pizza</option>
                                 </select>
