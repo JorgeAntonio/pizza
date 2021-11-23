@@ -53,8 +53,8 @@
                                     <td>{{$pizza->name}}</td>
                                     <td>{{$pizza->description}}</td>
                                     <td>{{$pizza->category}}</td>
-                                    <td>{{$pizza->smal_pizza_price}}</td>
-                                    <td>{{$pizza->mediun_pizza_price}}</td>
+                                    <td>{{$pizza->small_pizza_price}}</td>
+                                    <td>{{$pizza->medium_pizza_price}}</td>
                                     <td>{{$pizza->large_pizza_price}}</td>
 
                                     <td><a href="{{route('pizza.edit',$pizza->id)}}"><button class="btn btn-primary">Edit</button></a></td>
