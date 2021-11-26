@@ -1,0 +1,34 @@
+/*ICONOS*/
+
+.container-icons{
+    width: 100%;
+    background-color: #fff;
+    margin-top: auto;
+}
+
+.container-icons .icons{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 45px 0;
+}
+
+.container-icons .icons a{
+    color: grey;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.container-icons .icons a:hover{
+    color: #f58020;
+}
+
+@media screen and (max-width: 800px){
+    .container-icons .icons{
+        width: 90%;
+        display: flex;
+        padding: 35px 0;
+    }
+}

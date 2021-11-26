@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container py-4">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
@@ -51,14 +51,9 @@
         </div>
     </div>
 
+    @include('layouts.footer.footer')
+
     <style>
-        a.list-group-item{
-            font-size: 18px;
-        }
-        a.list-group-item:hover{
-            background-color: red;
-            color: #fff;
-        }
         .card-header{
             background-color: red;
             color: #fff;
