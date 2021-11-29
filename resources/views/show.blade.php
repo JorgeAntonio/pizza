@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container pt-4 pb-4">
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">Menu</div>
+                    <header class="card-header">Menu</header>
                     <div class="card-body">
                         @if(\Illuminate\Support\Facades\Auth::check())
                             <form action="{{ route('order.store') }}" method="post">@csrf
@@ -45,9 +45,9 @@
             </div>
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Pizza</div>
+                    <header class="card-header">Details</header>
                     <div class="card-body">
-                        <img src="{{ Storage::url($pizza->image) }}" class="img-thumbnail mb-1" alt="" style="width: 100%">
+                        <img src="{{ Storage::url($pizza->image) }}" class="card-img-top" alt="" style="width: 100%">
                             <p><h3>{{ $pizza->name }}</h3></p>
                             <p><h3>{{ $pizza->description }}</h3></p>
                             <p>Small pizza price: S/{{ $pizza->small_pizza_price }}</p>
@@ -73,4 +73,6 @@
             font-size: 20px;
         }
     </style>
+
+    @include('layouts.footer.footer')
 @endsection

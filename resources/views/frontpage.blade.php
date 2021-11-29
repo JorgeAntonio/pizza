@@ -12,11 +12,11 @@
         </div>
     </div>
 
-    <div class="container pb-4">
+    <div class="container pb-4 mt-4">
         <div class="row justify-content-center">
             <div class="col-md-3">
                 <div class="card">
-                    <div class="card-header">Categories</div>
+                    <header class="card-header">Categories</header>
                     <div class="card-body">
                         <div class="list-group">
                             <form action="{{ route('frontpage') }}" method="get">
@@ -30,24 +30,24 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Pizza ({{ count($pizzas) }} pizzas)</div>
-                    <div class="card-body">
-                        <div class="row">
-                            @forelse( $pizzas as $pizza )
-                            <div class="col-md-4 mt-2 text-center" style="border: 1px solid #ccc;">
-                                <img src="{{ Storage::url($pizza->image) }}" class="img-thumbnail m-1" alt="" style="width: 100%">
-                                <p>{{ $pizza->name }}</p>
-                                <p>{{ $pizza->description }}</p>
-                                <a href="{{ route('pizza.show',$pizza->id) }}">
-                                    <button type="submit" class="btn btn-danger mb-2">Order now</button>
-                                </a>
+                <header class="card-header">Pizza ({{ count($pizzas) }} pizzas)</header>
+                <div class="row row-cols-1 row-cols-md-3 g-4 pt-2">
+                    @forelse( $pizzas as $pizza )
+                        <div class="col pb-4">
+                            <div class="card h-100 text-center">
+                                <img src="{{ Storage::url($pizza->image) }}" class="card-img-top pt-2" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $pizza->name }}</h5>
+                                    <p class="card-text h-50">{{ $pizza->description }}</p>
+                                    <a href="{{ route('pizza.show',$pizza->id) }}">
+                                        <button type="submit" class="btn btn-danger">Order Now</button>
+                                    </a>
+                                </div>
                             </div>
-                            @empty
-                            <p>No pizzas to show</p>
-                            @endforelse
                         </div>
-                    </div>
+                    @empty
+                        <p>No pizzas to show</p>
+                    @endforelse
                 </div>
             </div>
         </div>
